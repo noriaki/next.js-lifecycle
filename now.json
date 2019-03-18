@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "nextjs-lifecycle-methods-diagram",
+  "regions": ["all"],
+  "public": true,
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+}

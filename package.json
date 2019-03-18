@@ -1,8 +1,8 @@
 {
-  "name": "next.js-lifecycle",
+  "name": "nextjs-lifecycle-methods-diagram",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:noriaki/next.js-lifecycle.git",
+  "repository": "git@github.com:noriaki/nextjs-lifecycle-methods-diagram.git",
   "author": "Noriaki Uchiyama <uchiyama.noriaki@gmail.com>",
   "license": "MIT",
   "scripts": {
