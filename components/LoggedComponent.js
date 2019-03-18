@@ -17,7 +17,7 @@ const createLoggedComponent = context => (
       };
     }
 
-    static getDerivedStateFromProps (props, state) {
+    static getDerivedStateFromProps (props) {
       const logger = createLogger(props);
       logger.add({
         context,
@@ -40,7 +40,7 @@ const createLoggedComponent = context => (
     shouldComponentUpdate (nextProps) {
       createLogger(nextProps).add({
         context,
-        method: 'shouldComponentUpdate',
+        method: 'shouldComponentUpdate (and return `true`)',
       });
       return true;
     }
@@ -55,7 +55,7 @@ const createLoggedComponent = context => (
     componentDidMount () {
       createLogger(this.props).add({
         context,
-        method: 'componentDidMount',
+        method: 'componentDidMount (and `setState({ done: true })`)',
       });
       this.setState({ done: true });
     }

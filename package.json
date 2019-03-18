@@ -6,7 +6,7 @@
   "author": "Noriaki Uchiyama <uchiyama.noriaki@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "node server/index.js",
+    "dev": "next dev --port 3030",
     "now-build": "next build"
   },
   "dependencies": {

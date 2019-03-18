@@ -1,28 +1,23 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 
+import { isRequestToServer } from '../lib/util';
 import createLogger from '../lib/logger';
 
 const context = 'pages/_document.js';
 
 export default class MyDocument extends Document {
-  static getInitialProps (ctx) {
+  static async getInitialProps (ctx) {
+    ctx.isReqToServer = isRequestToServer(ctx);
     createLogger(ctx).add({
       context,
       method: 'getInitialProps',
     });
 
-    let pageContext;
-    const page = ctx.renderPage(Component => (
-      (props) => {
-        pageContext = props.pageContext;
-        return <Component {...props} />;
-      }
-    ));
+    const initialProps = await Document.getInitialProps(ctx);
 
     return {
-      ...page,
-      pageContext,
+      ...initialProps,
     };
   }
 
@@ -39,7 +34,7 @@ export default class MyDocument extends Document {
       method: 'render',
     });
 
-    const { pageContext } = this.props;
+    // const { pageContext } = this.props;
 
     return (
       <html>
