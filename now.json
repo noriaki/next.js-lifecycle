@@ -3,5 +3,6 @@
   "name": "nextjs-lifecycle-methods-diagram",
   "regions": ["all"],
   "public": true,
+  "alias": ["nextjs-lifecycle-methods-diagram"],
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
